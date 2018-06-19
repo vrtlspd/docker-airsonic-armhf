@@ -17,7 +17,7 @@ ENV AIRSONIC_HOME="/app/airsonic" \
 AIRSONIC_SETTINGS="/config"
 
 # Set the locale
-RUN locale-gen en_US.ISO-8859-15
+RUN locale-gen en_US.UTF-8
 ENV LANG en_US.ISO-8859-15
 ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.ISO-8859-15
