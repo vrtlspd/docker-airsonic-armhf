@@ -17,10 +17,11 @@ ENV AIRSONIC_HOME="/app/airsonic" \
 AIRSONIC_SETTINGS="/config"
 
 # Set the locale
-RUN locale-gen en_US.UTF-8
-ENV LANG en_US.ISO-8859-15
+RUN sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen && \
+    locale-gen
+ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US:en
-ENV LC_ALL en_US.ISO-8859-15
+ENV LC_ALL en_US.UTF-8
 
 RUN \
  echo "**** install build packages ****" && \
