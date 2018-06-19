@@ -16,6 +16,12 @@ ARG JETTY_VER="9.3.14.v20161028"
 ENV AIRSONIC_HOME="/app/airsonic" \
 AIRSONIC_SETTINGS="/config"
 
+# Set the locale
+RUN locale-gen en_US.ISO-8859-15
+ENV LANG en_US.ISO-8859-15
+ENV LANGUAGE en_US:en
+ENV LC_ALL en_US.ISO-8859-15
+
 RUN \
  echo "**** install build packages ****" && \
  apk add --no-cache --virtual=build-dependencies \
